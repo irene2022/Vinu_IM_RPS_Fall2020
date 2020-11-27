@@ -12,11 +12,11 @@ Clone the project, <code>cd</code> to your directory/download, and run the game.
 ## Rules
 Same as the classic game:
 
-Paper covers Rock
-Scissors cuts Paper
-Rock smashes Scissors
+1.Paper covers Rock
+2.Scissors cuts Paper
+3.Rock smashes Scissors
 
-Choose your weapons wisely!
+You will be playing against an AI, so choose your weapons wisely!
 
 Built with Python 3
 
