@@ -2,7 +2,7 @@
 from random import randint
 
 #re-import our game variables 
-from gameComponents import gameVars, winLose
+from gameComponents import gameVars, winLose, compareGame
 
 
 print("\n**************/ RPS GAME /**************")
@@ -33,51 +33,23 @@ while gameVars.player is False:
 	print("Player choice: " + gameVars.player)
 	print("Computer chose: " + computer)
 
+	if computer == gameVars.player:
+		compareGame.game("tie")
 
-	# THE GAME CONDITIONS!!!
-	if (computer == gameVars.player):
-		print("Tie!")
+	elif computer == "rock":
+		compareGame.game("rock")
 
-	elif (computer == "rock"):
-		if (gameVars.player == "scissors"):
-			print("Player -1")
-			gameVars.player_lives -= 1
-		else:
-			print("Computer -1")
-			gameVars.computer_lives -= 1
+	elif computer == "paper":
+		compareGame.game("paper")
 
-	elif (computer == "paper"):
-		if (gameVars.player == "rock"):
-			print("Player -1")
-			gameVars.player_lives -= 1
-		else:
-			print("Computer -1")
-			gameVars.computer_lives -= 1
-
-	elif (computer == "scissors"):
-		if (gameVars.player == "paper"):
-			print("Player -1")
-			gameVars.player_lives -= 1
-		else:
-			print("Computer -1")
-			gameVars.computer_lives -= 1
-
-	#player and computer lives displayed at the end of each round
-	print("Player lives: ", gameVars.player_lives,"/",gameVars.total_lives)
-	print("Computer lives: ", gameVars.computer_lives,"/",gameVars.total_lives)
-	gameVars.level += 1
-
-
-	if gameVars.player_lives is 0:
-		winLose.winorlose("lost") #invokes the function here
-
-	elif gameVars.computer_lives is 0:
-		winLose.winorlose("won")
+	elif computer == "scissors":
+		compareGame.game("scissors")
 
 	else:
-		gameVars.player = False
+		print("Invalid option.")
+
 
 # make the loop keep running by setting player back to False
 # unset, so that the loop condition above will evaluate to True
-	gameVars.player = False
+gameVars.player = False
 
