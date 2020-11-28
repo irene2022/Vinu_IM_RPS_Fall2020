@@ -43,17 +43,3 @@ def game(compare):
 	else:
 		gameVars.player = False
 
-'''
-# THE GAME CONDITIONS!!!
-	if (computer == gameVars.player):
-		print("Tie!")
-
-	elif (computer == "rock"):
-		
-
-	elif (computer == "paper"):
-		
-
-	elif (computer == "scissors"):
-		
-'''
